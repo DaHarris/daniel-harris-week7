@@ -9,10 +9,18 @@
 <body>
 
   <% if current_user %>
-    <h1><%= current_user.user_name %> | </h1>
+    <%= current_user.user_name %>
+    | 
     <%= link_to 'Signout', signout_path %>
   <% else %>
+    <%= link_to 'New User', new_user_path %>
+    |
     <%= link_to 'Signin', signin_path %>
+  <% end %>
+  <br>
+  <br>
+  <% if notice %>
+    <%= notice %>
   <% end %>
 
   <%= yield %>
