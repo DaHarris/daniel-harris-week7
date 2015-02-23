@@ -36,4 +36,10 @@ class UsersController < ApplicationController
     redirect_to root_path, :notice => "User was successfully deleted."
   end
 
+  private
+
+  def users_controller
+    params.require(:user).permit(:user_name, :password, :about)
+  end
+
 end
