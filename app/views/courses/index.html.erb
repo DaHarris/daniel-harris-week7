@@ -5,15 +5,16 @@
     <th>Title</th>
     <th>Day or Night</th>
   </tr>
-  <tr>
+
     <% @courses.each do |course| %>
-      <td><%= link_to course.title, course_path(course) %></td>
-      <% if course.day %>
-        <td>Day</td>
-      <% else %>
-        <td>Night</td>
-      <% end %>
-      <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr>
+        <td><%= link_to course.title, course_path(course) %></td>
+        <% if course.day %>
+          <td>Day</td>
+        <% else %>
+          <td>Night</td>
+        <% end %>
+        <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </tr>
 </table>

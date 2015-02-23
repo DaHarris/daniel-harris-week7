@@ -4,9 +4,9 @@
   <tr>
     <th>User Name: </th>
   </tr>
-  <tr>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
+    <tr>
       <td><%= link_to user.user_name, user_path(user) %></td>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 </table>
