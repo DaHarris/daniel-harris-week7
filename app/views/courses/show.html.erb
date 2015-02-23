@@ -1,0 +1,8 @@
+<h1><%= @course.title %></h1>
+<br>
+<h3>Day course or night course: </h3>
+<% if @course.day %>
+  <p>Day</p>
+<% else %>
+  <p>Night</p>
+<% end %>
