@@ -54,6 +54,19 @@ describe 'User can CRUD Events' do
     expect(page).to have_content("User was not successfully created.")
   end
 
+  it 'Does not accept bad credentials' do
+    visit '/'
+
+    click_on 'Signin'
+
+    fill_in "User name", with: "crap"
+    fill_in "Password", with: "crap"
+
+    click_on "Log in"
+
+    expect(page).to have_content("Signin")
+  end
+
   it 'Does not accept used user_name' do
     #visit root
     visit '/'
