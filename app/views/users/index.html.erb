@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<table>
+  <tr>
+    <th>User Name: </th>
+  </tr>
+  <tr>
+    <% @users.each do |user| %>
+      <td><%= link_to user.user_name, user_path(user) %></td>
+    <% end %>
+  </tr>
+</table>
